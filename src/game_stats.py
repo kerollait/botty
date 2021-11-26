@@ -34,18 +34,18 @@ class GameStats:
 
     def log_death(self):
         self._death_counter += 1
-        self._send_discord_thread(f"You have died")
+        # self._send_discord_thread(f"You have died")
 
     def log_chicken(self):
         self._chicken_counter += 1
-        self._send_discord_thread(f"You have chickened")
+        # self._send_discord_thread(f"You have chickened")
 
     def log_start_game(self):
         if self._game_counter > 0:
             self._save_stats_to_file()
-            if self._game_counter % 20 == 0:
-                # every 20th game send a discord update about current status
-                self._send_discord_status_update()
+            # if self._game_counter % 20 == 0:
+            # every 20th game send a discord update about current status
+            # self._send_discord_status_update()
         self._game_counter += 1
         self._timer = time.time()
         Logger.info(f"Starting game #{self._game_counter}")

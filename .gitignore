@@ -20,3 +20,4 @@ custom.ini
 info_screenshots/
 loot_screenshots/
 .venv
+.idea/
