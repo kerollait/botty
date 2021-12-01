@@ -21,3 +21,4 @@ info_screenshots/
 loot_screenshots/
 .venv
 .idea/
+*.zip
