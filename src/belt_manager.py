@@ -106,8 +106,11 @@ class BeltManager:
             "health": self._config.char["belt_hp_columns"],
             "mana": self._config.char["belt_mp_columns"],
         }
-        center_m = self._screen.convert_abs_to_monitor((-200, -120))
-        mouse.move(*center_m, randomize=100)
+        # In case we are in danger that the mouse hovers the belt rows, move it to the center
+        screen_mouse_pos = self._screen.convert_monitor_to_screen(mouse.get_position())
+        if screen_mouse_pos[1] > self._config.ui_pos["screen_height"] * 0.72:
+            center_m = self._screen.convert_abs_to_monitor((-200, -120))
+            mouse.move(*center_m, randomize=100)
         keyboard.send(self._config.char["show_belt"])
         wait(0.5)
         # first clean up columns that might be too much
