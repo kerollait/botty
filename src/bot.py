@@ -255,9 +255,9 @@ class Bot:
             # eldritch
             self._curr_location = Location.ELDRITCH_START
             if not self._template_finder.search_and_wait(["ELDRITCH_0", "ELDRITCH_START"], threshold=0.65, time_out=20).valid: return False
-            if not self._pre_buffed:
-                self._char.pre_buff()
-                self._pre_buffed = 1
+            # if not self._pre_buffed:
+            self._char.pre_buff()
+            self._pre_buffed = 1
             if self._config.char["static_path_eldritch"]:
                 self._pather.traverse_nodes_fixed("eldritch_save_dist", self._char)
             else:

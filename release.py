@@ -57,8 +57,9 @@ if __name__ == "__main__":
     os.system(installer_cmd)
     os.system(f"mkdir {botty_dir}")
 
-    with open(f"{botty_dir}/custom.ini", "w") as f: 
-        f.write("; Add parameters you want to overwrite from param.ini here")
+    #with open(f"{botty_dir}/custom.ini", "w") as f:
+        #f.write
+    shutil.copy("custom.ini", f"{botty_dir}/")
     shutil.copy("game.ini", f"{botty_dir}/")
     shutil.copy("params.ini", f"{botty_dir}/")
     shutil.copy("README.md", f"{botty_dir}/")
